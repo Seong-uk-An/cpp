@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void)
+int main_loop(void)
 {
     // printf("Hello world\n");
     // printf("Hello world\n");
@@ -120,11 +120,20 @@ int main(void)
 
     // 피라미드 쌓기
     int floor;
-    prinf("몇층으로 쌓을 건가요?");
+    printf("몇층으로 쌓을 건가요? ");
     scanf("%d", &floor);
     for (int i = 0; i < floor; i++)
     {
+        for (int j = i; j < floor - 1; j++)
+        {
+            printf(" ");
         }
+        for (int k = 0; k < (i * 2) + 1; k++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
 
     return 0;
 }
