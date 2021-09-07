@@ -10,7 +10,7 @@ void function_with_params(int num1, int num2, int num3);
 int apple(int total, int ate);
 int add(int num1, int num2);
 
-int main(void)
+int main_function(void)
 {
     // function
     // 계산기
