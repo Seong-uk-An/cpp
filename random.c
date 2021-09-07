@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(void)
+int main_random(void)
 {
     // srand(time(NULL)); //난수 초기화
     // int num = rand() % 3; //0 ~ 2
