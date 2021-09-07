@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void)
+int main_condition(void)
 {
     // //버스를 탄다고 가정    학생 / 일반인으로 구분 (일반인 : 20세 이상)
     // int age = 15;
@@ -68,10 +68,10 @@ int main(void)
     // }
 
     // && ||
-    int a = 10;
-    int b = 11;
-    int c = 12;
-    int d = 13;
+    // int a = 10;
+    // int b = 11;
+    // int c = 12;
+    // int d = 13;
 
     return 0;
 }
