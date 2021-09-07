@@ -38,8 +38,38 @@ int main(void)
     //     printf("%.2f\n", arr_f[i]);
     // }
 
-    char str[6] = "coding";
-    printf("%s\n", str);
+    // char str[] = "coding";
+    // // printf("%s\n", str);
+    // // printf("%lu\n", sizeof(str));
+
+    // for (int i = 0; i < sizeof(str); i++)
+    // {
+    //     printf("%c\n", str[i]);
+    // }
+
+    // char kor[] = "나도코딩";
+    // printf("%s\n", kor);
+    // printf("%lu\n", sizeof(kor));
+
+    // char c_array[7] = {'c', 'o', 'd', 'i', 'n', 'g', '\0'};
+    // char c_array[6] = {'c', 'o', 'd', 'i', 'n', 'g'};
+    // printf("%s\n", c_array);
+
+    // char c_array[10] = {'c', 'o', 'd', 'i', 'n', 'g'};
+    // printf("%s\n", c_array);
+    // for (int i = 0; i < sizeof(c_array); i++)
+    // {
+    //     printf("%c\n", c_array[i]);
+    // }
+    // for (int i = 0; i < sizeof(c_array); i++)
+    // {
+    //     printf("%d\n", c_array[i]);
+    // }
+
+    char name[256];
+    printf("이름이 뭐에요? ");
+    scanf("%s", name, sizeof(name));
+    printf("%s\n", name);
 
     return 0;
 }
