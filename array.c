@@ -66,10 +66,19 @@ int main(void)
     //     printf("%d\n", c_array[i]);
     // }
 
-    char name[256];
-    printf("이름이 뭐에요? ");
-    scanf("%s", name, sizeof(name));
-    printf("%s\n", name);
+    // char name[256];
+    // printf("이름이 뭐에요? ");
+    // scanf("%s", name, sizeof(name));
+    // printf("%s\n", name);
+
+    // ASCII code
+    // printf("%c\n", '0');
+    // printf("%d\n", '0');
+
+    for (int i = 0; i < 128; i++)
+    {
+        printf("아스키 코드 %d : %c\n", i, i);
+    }
 
     return 0;
 }
