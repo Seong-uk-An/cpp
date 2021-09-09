@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+
 int level;
 int arrayFish[6];
 int *cursor;
 
 void initData();
 void printFishes();
-void decreaseWater(long prevElapsedTime);
+void decreaseWater(long elapsedTime);
+int checkFishAlive();
 
 int main(void)
 {
@@ -30,7 +32,7 @@ int main(void)
         //입력값 체크
         if (num < 1 || num > 6)
         {
-            printf("\nYou wrote the wrong number.\n");
+            printf("You wrote the wrong number.\n\n");
             continue;
         }
 
@@ -38,18 +40,18 @@ int main(void)
 
         printf("총 경과시간 : %ld초\n", totalElapsedTime);
         prevElapsedTime = totalElapsedTime - prevElapsedTime;
-        printf("최근 경과시간 : %ld초\n", prevElapsedTime);
+        printf("최근 경과시간 : %ld초\n\n", prevElapsedTime);
 
         decreaseWater(prevElapsedTime);
 
         if (cursor[num - 1] <= 0)
         {
-            printf("The fish you clicked alreay dead... Please click the other fish.");
+            printf("The fish you clicked alreay dead... Please click the other fish.\n");
         }
         else if (cursor[num - 1] + 1 <= 100)
         {
             printf("%d", num);
-            cursor += 1;
+            cursor[num - 1] += 1;
         }
 
         if (totalElapsedTime / 20 > level - 1)
@@ -64,6 +66,17 @@ int main(void)
             exit(0);
         }
     }
+
+    if (checkFishAlive() == 0)
+    {
+        printf("Fish are all dead.\n");
+        exit(0);
+    }
+    else
+    {
+        printf("Fish alive!\n");
+    }
+    prevElapsedTime = totalElapsedTime;
 
     return 0;
 }
@@ -86,14 +99,26 @@ void printFishes()
     }
 }
 
-void decreaseWater(long prevElapsedTime)
+void decreaseWater(long elapsedTime)
 {
     for (int i = 0; i < 6; i++)
     {
-        arrayFish[i] -= level * 3 * (int)prevElapsedTime;
-        if (arrayFish[i] <= 0)
+        arrayFish[i] -= level * 3 * (int)elapsedTime;
+        if (arrayFish[i] < 0)
         {
             arrayFish[i] = 0;
         }
     }
+}
+
+int checkFishAlive()
+{
+    for (int i = 0; i < 6; i++)
+    {
+        if (arrayFish[i] > 0)
+        {
+            return 1;
+        }
+    }
+    return 0;
 }
